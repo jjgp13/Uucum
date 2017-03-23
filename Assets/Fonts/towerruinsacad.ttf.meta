@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 5ad3dfae31eafa04a9052414b6049b35
+timeCreated: 1490226849
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tower Ruins Academy
+  fontNames:
+  - Tower Ruins Academy
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

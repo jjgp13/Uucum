@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6acd52a88604fd34f83a87874cc2863d
+timeCreated: 1490226849
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tower Ruins Outline
+  fontNames:
+  - Tower Ruins Outline
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 49d5d0c0b254e6e47bcac6c1eb3231a8
+timeCreated: 1490226849
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tower Ruins Condensed
+  fontNames:
+  - Tower Ruins Condensed
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f5b20c927fb89134297ec53c15d65616
+timeCreated: 1490226849
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tower Ruins Rotalic
+  fontNames:
+  - Tower Ruins Rotalic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
