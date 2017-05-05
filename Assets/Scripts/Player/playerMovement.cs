@@ -18,6 +18,7 @@ public class playerMovement : MonoBehaviour {
 
     private float nextFire;
 
+
     Rigidbody rb;
 
 	public bool isShootBtnPress;
@@ -26,8 +27,7 @@ public class playerMovement : MonoBehaviour {
 	public GameObject pSlow;
 	public GameObject pFast;
 
-    private void Start()
-    {
+    private void Start(){
         rb = GetComponent<Rigidbody>();
         InitialDevicePosition = Input.acceleration;
     }
@@ -61,19 +61,19 @@ public class playerMovement : MonoBehaviour {
 		);
 
 		//Rotar la nave segun el input del acelerometro.
-		movement = Vector3.Lerp (movement, Input.acceleration - InitialDevicePosition, smooth);
-		transform.Rotate(movement.y * rotationSpeed,  -movement.x * rotationSpeed, 0f);
-		/*if(Input.GetKey(KeyCode.LeftArrow))
-			transform.Rotate(Vector3.up, -rotationSpeed);
+		/*movement = Vector3.Lerp (movement, Input.acceleration - InitialDevicePosition, smooth);
+		transform.Rotate(movement.y * rotationSpeed,  -movement.x * rotationSpeed, 0f);*/
+		if(Input.GetKey(KeyCode.LeftArrow))
+			transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
 
 		if(Input.GetKey(KeyCode.RightArrow))
-			transform.Rotate(Vector3.up, rotationSpeed);
+			transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
 		if(Input.GetKey(KeyCode.UpArrow))
-			transform.Rotate(Vector3.left, -rotationSpeed);
+			transform.Rotate(Vector3.left, -rotationSpeed * Time.deltaTime);
 
 		if(Input.GetKey(KeyCode.DownArrow))
-			transform.Rotate(Vector3.left, rotationSpeed);*/
+			transform.Rotate(Vector3.left, rotationSpeed * Time.deltaTime);
 		/*float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 		transform.Rotate(moveHorizontal * rotationSpeed,  -moveVertical * rotationSpeed, 0f);*/

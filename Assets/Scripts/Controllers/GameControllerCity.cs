@@ -24,6 +24,7 @@ public class GameControllerCity : MonoBehaviour {
 	//Audios for music
 	public AudioClip[] bgMusic;
 
+
 	// Use this for initialization
 	void Start () {
 		gameOver = false;
@@ -49,7 +50,7 @@ public class GameControllerCity : MonoBehaviour {
 		while (gameOver != true) {
 			if (enemyCount == 0) {
 				wave++;
-				enemyCount = Random.Range (3,5) + enemyCountInitial;
+				enemyCount = Random.Range (3,10) + enemyCountInitial;
 				enemyCountInitial = enemyCount;
 				for (int i = 0; i < enemyCount; i++) {
 					yield return new WaitForSeconds (5f);
@@ -57,7 +58,7 @@ public class GameControllerCity : MonoBehaviour {
 					float zRandPos = Random.Range (-2400f, 2400f);
 					float yRandPos = Random.Range (200f, 600f);
 					Vector3 spawnPos = new Vector3 (xRandPos, yRandPos, zRandPos);
-					Instantiate (enemyType[Random.Range(0,2)], spawnPos, Quaternion.identity);
+					Instantiate (enemyType[Random.Range(0,3)], spawnPos, Quaternion.identity);
 				}
 			}
 			yield return new WaitForSeconds (10f);
