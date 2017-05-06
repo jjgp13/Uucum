@@ -4,30 +4,47 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject player;       //Public variable to store a reference to the player game object
-    private Vector3 offset;         //Private variable to store the offset distance between the player and camera
+	// The target we are following
+	[SerializeField]
+	private Transform target;
+	// The distance in the x-z plane to the target
+	[SerializeField]
+	private float distance = 10.0f;
 
-    // Use this for initialization
-    void Start()
-    {
-		gameObject.transform.position = player.transform.position - new Vector3(0,0,10f);
-        //Calculate and store the offset value by getting the distance between the player's position and camera's position.
-        offset = transform.position - player.transform.position;
-    }
+	[SerializeField]
+	private float rotationDamping;
 
-    // LateUpdate is called after Update each frame
-    void LateUpdate()
+	// Use this for initialization
+	void Start() { }
+
+	// Update is called once per frame
+	void LateUpdate()
 	{
-		//Para tunel
-		/*transform.position = new Vector3(
-            Mathf.Clamp(player.transform.position.x + offset.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(player.transform.position.y + offset.y, boundary.yMin, boundary.yMax),
-            player.transform.position.z + offset.z);*/
+		// Early out if we don't have a target
+		if (!target)
+			return;
 
-		//Movimiento libre;
-		transform.position = new Vector3(
-			player	.transform.position.x + offset.x,
-			player.transform.position.y + offset.y,
-			player.transform.position.z + offset.z);
-    }
+		// Calculate the current rotation angles X
+		var wantedRotationAngleX = target.eulerAngles.x;
+		var currentRotationAngleX = transform.eulerAngles.x;
+		// Y
+		var wantedRotationAngleY = target.eulerAngles.y;
+		var currentRotationAngleY = transform.eulerAngles.y;
+
+		// Damp the rotation around the y-axis
+		currentRotationAngleX = Mathf.LerpAngle(currentRotationAngleX, wantedRotationAngleX, rotationDamping * Time.deltaTime);
+		currentRotationAngleY = Mathf.LerpAngle(currentRotationAngleY, wantedRotationAngleY, rotationDamping * Time.deltaTime);
+
+		// Convert the angle into a rotation
+		var currentRotation = Quaternion.Euler(currentRotationAngleX, currentRotationAngleY, 0);
+
+		// Set the position of the camera on the x-z plane to:
+		// distance meters behind the target
+		transform.position = target.position;
+		transform.position -= currentRotation * Vector3.forward * distance;
+
+		// Always look at the target
+		transform.LookAt(target);
+	}
+
 }
